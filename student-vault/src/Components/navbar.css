@@ -1,0 +1,196 @@
+.navbar {
+  background-color: #ffffff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2C3E50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #2C3E50;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  color: #3498DB;
+}
+
+.nav-logo:hover {
+  color: #3498DB;
+  transform: translateY(-1px);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #2C3E50;
+  font-weight: 500;
+}
+
+.nav-icon {
+  transition: transform 0.2s ease;
+}
+
+.nav-links li:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-links li.active {
+  background-color: #3498DB;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.nav-links li.active .nav-icon {
+  color: white;
+}
+
+.nav-links li:hover:not(.active) {
+  background-color: #f8f9fa;
+  color: #3498DB;
+  transform: translateY(-1px);
+}
+
+.sign-out-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #e74c3c;
+  background-color: transparent;
+  color: #e74c3c;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 42px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sign-out-btn .nav-icon {
+  transition: all 0.3s ease;
+  min-width: 20px;
+}
+
+.sign-out-text {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+.sign-out-btn:hover {
+  width: 120px;
+  background-color: #e74c3c;
+  color: white;
+}
+
+.sign-out-btn:hover .nav-icon {
+  color: white;
+}
+
+.sign-out-btn:hover .sign-out-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: #2C3E50;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  color: #3498DB;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .nav-links.mobile-open {
+    max-height: 300px;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    padding: 16px;
+    border-radius: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .sign-out-btn {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    padding: 16px;
+    overflow: visible;
+  }
+  
+  .sign-out-text {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .sign-out-btn:hover {
+    width: 100%;
+    transform: none;
+    background-color: #fff1f0;
+  }
+}

@@ -1,0 +1,136 @@
+.student-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #f4f6f9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.6s ease-out;
+}
+  
+.student-container h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+}
+  
+.assignment-container {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+  
+.assignment-list {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 0.8s ease-out;
+    border: 1px solid #e1e8ed;
+}
+  
+.assignment-list:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #007BFF;
+}
+  
+.assignment-list h3 {
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+  
+.assignment-list p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+  
+.assignment-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+  
+.assignment-list a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, #0056b3, #004494);
+}
+  
+.assignment-list a:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+  
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .student-container {
+        margin: 20px;
+        padding: 20px;
+    }
+  
+    .assignment-container {
+        grid-template-columns: 1fr;
+    }
+  
+    .assignment-list {
+        padding: 15px;
+    }
+  
+    .assignment-list h3 {
+        font-size: 16px;
+    }
+}
+  
